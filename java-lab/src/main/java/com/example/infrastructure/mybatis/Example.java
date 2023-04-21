@@ -26,6 +26,10 @@ public class Example {
           List<User> userList = userMapper.selectAllUsers();
           for (User user : userList) {
               System.out.println(user.getId() + " " + user.getName() + " " + user.getEmail());
+              String name = String.format("%s:%s",user.getName(), user.getId() +1);
+              User updatedUser = new User(user.getId(), name, user.getEmail());
+              userMapper.updateUser(updatedUser);
+              session.commit();
           }
       }
   }

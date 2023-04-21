@@ -6,4 +6,7 @@
   <select id="selectAllUsers" resultType="com.example.infrastructure.mybatis.User">
     select * from users
   </select>
+　 <update id="updateUser" parameterType="com.example.infrastructure.mybatis.User">
+        UPDATE users SET name=#{name}, email=#{email} WHERE id=#{id}
+    </update>
 </mapper>
