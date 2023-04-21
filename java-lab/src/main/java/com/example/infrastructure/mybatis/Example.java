@@ -22,14 +22,11 @@ public class Example {
       // ★SqlSessionFactory から SqlSession を生成する
       try (SqlSession session = factory.openSession()) {
           // ★SqlSession を使って SQL を実行する
-          List<Map<String, Object>> result = session.selectList("sample.mybatis.selectTest");
-
-          result.forEach(row -> {
-              System.out.println("---------------");
-              row.forEach((columnName, value) -> {
-                  System.out.printf("columnName=%s, value=%s%n", columnName, value);
-              });
-          });
+          UserMapper userMapper = session.getMapper(UserMapper.class);
+          List<User> userList = userMapper.selectAllUsers();
+          for (User user : userList) {
+              System.out.println(user.getId() + " " + user.getName() + " " + user.getEmail());
+          }
       }
   }
   }
