@@ -6,7 +6,7 @@ services:
      context: .
     volumes:
       - ./:/app
-    command: mvn exec:java -X
+    command: mvn exec:java
     depends_on:
       - postgres
     environment:
