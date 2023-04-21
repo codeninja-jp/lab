@@ -13,6 +13,3 @@ COPY src /app/src
 
 # Use Maven to install dependencies
 RUN mvn dependency:resolve
-
-# Set the entrypoint to run the application
-ENTRYPOINT ["mvn", "exec:java"]

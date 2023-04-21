@@ -1,4 +1,4 @@
-package com.example.utils;
+package com.example.util;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -11,7 +11,7 @@ public class JSONFormatter {
     private static final Logger LOG = Logger.getLogger(JSONFormatter.class.getName());
 
 
-    private static String loadFile(String path) throws IOException {
+    public static String loadFile(String path) throws IOException {
         LOG.info("Loading JSON file...");
         String content = new String(Files.readAllBytes(Paths.get(path)));
         LOG.info("Loaded JSON file: " + content);
@@ -28,8 +28,7 @@ public class JSONFormatter {
         return json;
     }
 
-    public static String format(String path, String key, String newValue) throws IOException {
-        String json = loadFile(path);
+    public static String format(String json, String key, String newValue) throws IOException {
         JSONObject result = put(json, key, newValue);
         return result.toString();
     }

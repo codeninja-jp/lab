@@ -1,9 +1,0 @@
-version: "3.9"
-
-services:
-  my-java-app:
-    build:
-     context: .
-    volumes:
-      - ./:/app
-    # command: mvn exec:java
