@@ -1,0 +1,8 @@
+Invoking Container created from helloworldfunction:python3.10-v1
+Building image..................
+Using local image: helloworldfunction:rapid-x86_64.
+
+START RequestId: 3718239b-26f9-4127-ba52-d5e98858764e Version: $LATEST
+END RequestId: 3718239b-26f9-4127-ba52-d5e98858764e
+REPORT RequestId: 3718239b-26f9-4127-ba52-d5e98858764e  Init Duration: 2.16 ms  Duration: 1193.32 ms    Billed Duration: 1194 ms     Memory Size: 128 MB     Max Memory Used: 128 MB
+{"statusCode": 200, "body": "{\"message\": \"hello world\"}"}%

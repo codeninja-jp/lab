@@ -1,0 +1,9 @@
+Invoking Container created from helloworldfunction:java8.al2-maven-v1
+Building image.................
+Using local image: helloworldfunction:rapid-x86_64.
+
+START RequestId: 61552320-d79d-4aab-8166-f763131de77a Version: $LATEST
+Picked up JAVA_TOOL_OPTIONS: -XX:+TieredCompilation -XX:TieredStopAtLevel=1
+END RequestId: 61552320-d79d-4aab-8166-f763131de77a
+REPORT RequestId: 61552320-d79d-4aab-8166-f763131de77a  Init Duration: 2.27 ms  Duration: 8324.00 ms    Billed Duration: 8325 ms Memory Size: 128 MB     Max Memory Used: 128 MB
+{"statusCode":200,"headers":{"X-Custom-Header":"application/json","Content-Type":"application/json"},"body":"{ \"message\": \"hello world\", \"location\": \"61.192.114.57\" }"}%  
