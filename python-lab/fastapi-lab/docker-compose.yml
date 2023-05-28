@@ -1,0 +1,38 @@
+version: '3.9'
+
+services:
+  app-build:
+    build: .
+    command: poetry install
+    ports:
+      - "80:80"
+    volumes:
+      - .:/app
+      
+  app:
+    build: .
+    command: poetry run uvicorn app.main:app --host 0.0.0.0 --port 80
+    # command: poetry install
+    ports:
+      - "80:80"
+    volumes:
+      - .:/app
+    # depends_on:
+    #   - db
+    # environment:
+    #   DB_URL: postgresql://postgres:password@db:5432/mydatabase
+  # db:
+  #   image: postgres
+  #   environment:
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: password
+  #     POSTGRES_DB: mydatabase
+  tests:
+    build: .
+    command: poetry run pytest
+    volumes:
+      - .:/app
+    # depends_on:
+    #   - db
+    # environment:
+    #   DB_URL: postgresql://postgres:password@db:5432/mydatabase
